@@ -1,0 +1,111 @@
+.portfolio {
+    background-color: #2d303a;
+    border-bottom: 6px solid #323746;
+  
+    transition: 1s;
+
+
+
+    
+    & .wrapper {
+      padding: 60px 0 68px;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: flex-start;
+      
+      
+    }
+  
+    &__text {
+      font-size: 18px;
+      line-height: 30px;
+    }
+    &-tabs {
+      display: flex;
+      margin: 42px 0 18px;
+      &__link {
+        border: 1px solid;
+        border-radius: 5px;
+        padding: 0 7px;
+        margin: 0 5px;
+        cursor: pointer;
+        color: #767e9e;
+        &:hover {
+          border: 1px solid #fff;
+          color: #fff;
+        }
+      }
+      
+    }
+    &-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      
+     
+      &__image {
+        transition: 0.5s;
+        margin: 0 20px 20px 0;
+        // animation: showImage .5s forwards;
+
+        &:hover {
+          box-shadow: 0 0 5px 3px #fff;
+        }
+        &:nth-child(n + 13) {
+          display: none;
+        }
+      }
+    }
+  }
+
+
+  .image-show {
+    // animation :showImage .5s forwards;
+    order:0;
+  }
+  // .image-hidde-display {
+  //   display: none;
+  // }
+
+  
+  .image-hidden {
+    // animation: hideImage .5s forwards;
+    order: 1;
+
+  }
+
+  // .image-hidde-display {
+  //   display: none;
+  // }
+
+  .tab-selected {
+    color:$color-light;
+  }
+
+
+  
+
+  @keyframes hideImage {
+    from{
+      opacity: 1;
+      
+      
+
+    }
+    to{
+      opacity: 0;
+      
+
+    }
+  }
+  @keyframes showImage {
+    0%{
+      opacity: 0;
+      
+    }
+    100%{
+      opacity: 1;
+      
+    }
+  }
+ 
