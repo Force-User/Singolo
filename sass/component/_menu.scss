@@ -41,7 +41,9 @@
 .menu-show {
   animation: show-menu .5s forwards;
 }
-
+.menu-hidde {
+  animation: hidde-menu .5s forwards;
+}
 
 .hide-logo:before {
   content:"";
@@ -63,7 +65,7 @@
         left:0;
     }
 }
-@keyframes hide-menu {
+@keyframes hidde-menu {
     0% {
         left: 0;
     }

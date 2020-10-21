@@ -1,21 +1,20 @@
 .burger {
-    position: absolute;
-    top: 30px;
-    left: 20px;
-    display: none;
-    width: 20px;
-    height: 25px;
-    background-image: url("image/header/Burger-menu-icon.png");
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    transform: rotate(0deg);
-    transition: 0.3s;
-    cursor: pointer;
-    z-index: 4;
-  }
+  position: fixed;
+  top: 30px;
+  left: 20px;
+  display: none;
+  width: 20px;
+  height: 25px;
+  background-image: url("image/header/Burger-menu-icon.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: rotate(0deg);
+  transition: 0.3s;
+  cursor: pointer;
+  z-index: 4;
+}
 
-  .burger-active {
-    transform :rotate(90deg);
-    position :fixed;
-  }
+.burger-active {
+  transform :rotate(90deg);
+}
