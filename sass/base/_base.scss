@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+  text-decoration: none;
+  outline: none;
+  font-family: "Lato", Verdana, sans-serif;
+  list-style-type: none;
+}
+
+header {
+  @extend %flex;
+}
+section {
+  @extend %flex;
+}
+
+footer {
+  @extend %flex;
+}
+
+
+h2 {
+  color:$color-title;
+  font-size:30px;
+  padding-bottom: 18px;
+}
+h3 {
+  color: $color-title;
+  font-size: 18px;
+    margin-bottom: 7px;
+}
+
+p {
+  color: $color-text;
+}

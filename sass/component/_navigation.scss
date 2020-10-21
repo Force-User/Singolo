@@ -1,0 +1,38 @@
+.navigation {
+    @include flex(center,space-evenly);
+    width: 375px;
+    font-size: 12px;
+    list-style-type: none;
+    & .active {
+      color: $color-active;
+    }
+    & li {
+      color: $color-light;
+      position: relative;
+      &:after{
+        content: "";
+        position: absolute;
+      bottom: 5px;
+        right: -13px;
+        width: 3px;
+        height: 3px;
+        background-color: $color-light;
+        border-radius: 50%;
+      }
+      &:last-child:after {
+        display: none;
+      }
+    }
+  
+    &__link {
+      
+      
+      letter-spacing: -0.42px;
+      text-align: right;
+      color: inherit;
+      cursor: pointer;
+      &:hover {
+        text-shadow: 0px 0px 2px $color-light;
+      }
+    }
+  }

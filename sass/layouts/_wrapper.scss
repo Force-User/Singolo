@@ -1,0 +1,7 @@
+
+.wrapper {
+    @include flex(center,space-between);
+    width: 1020px;
+    margin: 0 40px;
+  
+  }

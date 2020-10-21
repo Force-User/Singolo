@@ -1,0 +1,13 @@
+.logo {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: -0.75px;
+    color: $color-light;
+    cursor: pointer;
+    & a {
+      color: inherit;
+    }
+    &--colored {
+      color:$color-active;
+    }
+  }
