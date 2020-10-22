@@ -8,6 +8,9 @@
     align-items: flex-start;
     padding: 60px 0 68px;
   }
+  &-content {
+    width: 100%;
+  }
 
   &__text {
     font-size: 18px;
@@ -39,12 +42,15 @@
     }
   }
   &-gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows:repeat(3,1fr);
+    grid-gap: 20px;
+    width: 100%;
+
 
     &__image {
-      margin: 0 20px 20px 0;
+      
       transition: 0.5s;
   
       &:hover {
@@ -61,9 +67,6 @@
   order: 0;
 }
 
-.image-pos {
-  margin: 0 0 20px 0;
-}
 
 .image-no-priority {
   order: 1;

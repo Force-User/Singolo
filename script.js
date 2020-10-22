@@ -95,14 +95,14 @@ function selectClickedTab() {
 function showAllTabs() {
   const allImages = document.querySelectorAll(".portfolio-gallery__image");
   allImages.forEach((image) => {
-    image.classList.remove("image-no-priority", "image-pos", "image-priority");
+    image.classList.remove("image-no-priority", "image-priority");
   });
 }
 
 function filterImageBySelectedTab(nameTab) {
   const allImages = document.querySelectorAll(".portfolio-gallery__image");
   allImages.forEach((image) => {
-    image.classList.add("image-no-priority", "image-pos");
+    image.classList.add("image-no-priority");
     image.classList.remove("image-priorirty");
 
     const imageName = image.getAttribute("data-name");
