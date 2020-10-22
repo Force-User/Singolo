@@ -1,3 +1,3 @@
 # Singolo
 Link to page
-[Singolo](https://thisisantony.github.io/singolo/)
+[Singolo](https://thisisantony.github.io/Singolo/)
