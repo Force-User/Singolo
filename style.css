@@ -603,6 +603,19 @@ p {
           box-shadow: 0 0 5px 1px #767e9e;
 }
 
+html::-webkit-scrollbar {
+  width: 5px;
+}
+
+html::-webkit-scrollbar-track {
+  background-color: white;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: #879a90;
+  border-radius: 10px;
+}
+
 @media (max-width: 1020px) {
   .services .wrapper {
     margin: 0 60px;
