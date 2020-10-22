@@ -7,12 +7,12 @@
     color: $color-active;
   }
   & li {
-    color: $color-light;
     position: relative;
+    color: $color-light;
     &:after{
       content: "";
       position: absolute;
-    bottom: 5px;
+      bottom: 5px;
       right: -13px;
       padding:2px ;
       background-color: $color-light;

@@ -1,14 +1,12 @@
 .portfolio {
   background-color: #2d303a;
   border-bottom: 6px solid #323746;
-
   transition: 1s;
-
   & .wrapper {
-    padding: 60px 0 68px;
     flex-direction: column;
     justify-content: space-around;
     align-items: flex-start;
+    padding: 60px 0 68px;
   }
 
   &__text {
@@ -17,16 +15,22 @@
   }
   &-tabs {
     display: flex;
+    justify-content: flex-start;
+  }
+  &-tablist {
+    width: 290px;
+    display: flex;
+    justify-content: space-between;
     margin: 42px 0 18px;
+    font-size: 12px;
    
 
-    &__link {
-      border: 1px solid;
-      border-radius: 5px;
+    &__tab {
       padding: 0 7px;
-      margin: 0 5px;
       cursor: pointer;
       color: #767e9e;
+      border: 1px solid;
+      border-radius: 5px;
       transition: 0.3s;
       &:hover {
         border: 1px solid #fff;
@@ -37,12 +41,12 @@
   &-gallery {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-between;
 
     &__image {
-      transition: 0.5s;
       margin: 0 20px 20px 0;
-
+      transition: 0.5s;
+  
       &:hover {
         box-shadow: 0 0 5px 3px #fff;
       }
@@ -53,7 +57,7 @@
   }
 }
 
-.image-show {
+.image-priority {
   order: 0;
 }
 
@@ -61,27 +65,10 @@
   margin: 0 0 20px 0;
 }
 
-.image-hidden {
+.image-no-priority {
   order: 1;
 }
 
 .tab-selected {
   color: $color-light;
-}
-
-@keyframes hideImage {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-@keyframes showImage {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
 }

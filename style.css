@@ -55,10 +55,10 @@ p {
 }
 
 .header {
+  position: relative;
   height: 89px;
   background-color: #2d303a;
   border-bottom: 6px solid #323746;
-  position: relative;
 }
 
 .header > .wrapper {
@@ -82,12 +82,8 @@ p {
 }
 
 .header--fixed {
-  height: inherit;
-  background-color: #2d303a;
-  border-bottom: 6px solid #323746;
   position: fixed;
   width: 100%;
-  z-index: 3;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -97,6 +93,10 @@ p {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  height: inherit;
+  background-color: #2d303a;
+  border-bottom: 6px solid #323746;
+  z-index: 3;
 }
 
 .area-padding {
@@ -189,7 +189,6 @@ p {
 }
 
 .portfolio .wrapper {
-  padding: 60px 0 68px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -199,6 +198,7 @@ p {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  padding: 60px 0 68px;
 }
 
 .portfolio__text {
@@ -210,21 +210,34 @@ p {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 42px 0 18px;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
-.portfolio-tabs__link {
-  border: 1px solid;
-  border-radius: 5px;
+.portfolio-tablist {
+  width: 290px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 42px 0 18px;
+  font-size: 12px;
+}
+
+.portfolio-tablist__tab {
   padding: 0 7px;
-  margin: 0 5px;
   cursor: pointer;
   color: #767e9e;
+  border: 1px solid;
+  border-radius: 5px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
-.portfolio-tabs__link:hover {
+.portfolio-tablist__tab:hover {
   border: 1px solid #fff;
   color: #fff;
 }
@@ -235,15 +248,15 @@ p {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .portfolio-gallery__image {
+  margin: 0 20px 20px 0;
   -webkit-transition: 0.5s;
   transition: 0.5s;
-  margin: 0 20px 20px 0;
 }
 
 .portfolio-gallery__image:hover {
@@ -255,7 +268,7 @@ p {
   display: none;
 }
 
-.image-show {
+.image-priority {
   -webkit-box-ordinal-group: 1;
       -ms-flex-order: 0;
           order: 0;
@@ -265,7 +278,7 @@ p {
   margin: 0 0 20px 0;
 }
 
-.image-hidden {
+.image-no-priority {
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
           order: 1;
@@ -273,42 +286,6 @@ p {
 
 .tab-selected {
   color: #fff;
-}
-
-@-webkit-keyframes hideImage {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-
-@keyframes hideImage {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-
-@-webkit-keyframes showImage {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes showImage {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
 }
 
 .footer {
@@ -326,6 +303,9 @@ p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .background-area {
@@ -403,8 +383,8 @@ p {
 }
 
 .navigation li {
-  color: #fff;
   position: relative;
+  color: #fff;
 }
 
 .navigation li:after {
@@ -599,11 +579,9 @@ p {
 }
 
 .social__link {
-  border: 1px solid #767e9e;
   width: 32px;
   height: 32px;
   margin-left: 8px;
-  border-radius: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -613,6 +591,8 @@ p {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  border: 1px solid #767e9e;
+  border-radius: 50%;
   cursor: pointer;
   -webkit-transition: 0.3s;
   transition: 0.3s;
@@ -629,6 +609,14 @@ p {
   }
   .swiper-slide img {
     width: 100%;
+  }
+  .image-pos {
+    margin-left: 20px;
+  }
+  .portfolio-gallery {
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
   }
 }
 
@@ -682,11 +670,19 @@ p {
   .menu li:after {
     display: none;
   }
+  .footer .wrapper {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .footer__text {
+    display: none;
+  }
 }
 
 @media (max-width: 494.5px) {
-  .portfolio-tabs__link {
-    text-align: center;
+  .image-pos {
+    margin-left: 0px;
   }
   .portfolio-gallery__image {
     width: 45%;

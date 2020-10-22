@@ -3,16 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+
     <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <title>Singolo</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>SINGOLO*</title>
   </head>
   <body>
     <header class="header" id="headerSection">
-      <div class="wrapper">
-        <div class="burger"></div>
+      <div class="burger"></div>
+      <div class="header--fixed">
+        
+        <div class="wrapper">
+       
         <div class="logo">
           <a href="#"
             ><h1>
@@ -26,9 +38,11 @@
             <li class="active">
               <a class="navigation__link" href="#headerSection">HOME</a>
             </li>
+            
             <li>
               <a class="navigation__link" href="#sectionServices">SERVICES</a>
             </li>
+
             <li>
               <a class="navigation__link" href="#portfolioSection">PORTFOLIO</a>
             </li>
@@ -37,6 +51,8 @@
           </ul>
         </nav>
       </div>
+      </div>
+      
     </header>
     <div class="menu">
       <div class="menu-content">
@@ -51,7 +67,7 @@
 
         <nav>
           <ul class="navigation">
-            <li>
+            <li class="active">
               <a class="navigation__link" href="#headerSection">HOME</a>
             </li>
 
@@ -72,8 +88,10 @@
     </div>
 
     <main>
-      <!---->
-      <section class="sliders">
+    <!---->  <section class="sliders">
+
+      
+        
         <div class="swiper-container">
           <!-- Additional required wrapper -->
           <div class="swiper-wrapper">
@@ -190,93 +208,27 @@
             </p>
           </div>
           <div class="portfolio-content">
-            <nav>
-              <ul class="portfolio-tabs">
-                <li class="portfolio-tabs__link tab-selected" data-name="all">
-                  All
-                </li>
-                <li class="portfolio-tabs__link" data-name="web">Web Design</li>
-                <li class="portfolio-tabs__link" data-name="graphic">
-                  Graphic Design
-                </li>
-                <li class="portfolio-tabs__link" data-name="artwork">
-                  Artwork
-                </li>
+            <div class="portfolio-tabs">
+              <ul class="portfolio-tablist">
+                <li class="portfolio-tablist__tab tab-selected" data-name="all">All</li>
+                <li class="portfolio-tablist__tab" data-name="web">Web Design</li>
+                <li class="portfolio-tablist__tab" data-name="graphic">Graphic Design</li>
+                <li class="portfolio-tablist__tab" data-name="artwork">Artwork</li>
               </ul>
-            </nav>
+            </div>
             <div class="portfolio-gallery">
-              <img
-                class="portfolio-gallery__image"
-                src="image/gallery/portfolio-1.png"
-                alt=""
-                data-name="artwork"
-              />
-              <img
-                class="portfolio-gallery__image"
-                src="image/gallery/portfolio-2.png"
-                alt=""
-                data-name="artwork"
-              />
-              <img
-                class="portfolio-gallery__image"
-                src="image/gallery/portfolio-3.png"
-                alt=""
-                data-name="artwork"
-              />
-              <img
-                class="portfolio-gallery__image"
-                src="image/gallery/portfolio-4.png"
-                alt=""
-                data-name="artwork"
-              />
-              <img
-                class="portfolio-gallery__image"
-                src="image/gallery/portfolio-5.png"
-                alt=""
-                data-name="web"
-              />
-              <img
-                class="portfolio-gallery__image"
-                src="image/gallery/portfolio-6.png"
-                alt=""
-                data-name="web"
-              />
-              <img
-                class="portfolio-gallery__image"
-                src="image/gallery/portfolio-7.png"
-                alt=""
-                data-name="web"
-              />
-              <img
-                class="portfolio-gallery__image"
-                src="image/gallery/portfolio-8.png"
-                alt=""
-                data-name="web"
-              />
-              <img
-                class="portfolio-gallery__image"
-                src="image/gallery/portfolio-9.png"
-                alt=""
-                data-name="graphic"
-              />
-              <img
-                class="portfolio-gallery__image"
-                src="image/gallery/portfolio-10.png"
-                alt=""
-                data-name="graphic"
-              />
-              <img
-                class="portfolio-gallery__image"
-                src="image/gallery/portfolio-11.png"
-                alt=""
-                data-name="graphic"
-              />
-              <img
-                class="portfolio-gallery__image"
-                src="image/gallery/portfolio-12.png"
-                alt=""
-                data-name="graphic"
-              />
+              <img class="portfolio-gallery__image" src="image/gallery/portfolio-1.png" alt="" data-name="artwork" />
+              <img class="portfolio-gallery__image" src="image/gallery/portfolio-2.png" alt="" data-name="graphic" />
+              <img class="portfolio-gallery__image" src="image/gallery/portfolio-3.png" alt="" data-name="web" />
+              <img class="portfolio-gallery__image" src="image/gallery/portfolio-4.png" alt="" data-name="artwork" />
+              <img class="portfolio-gallery__image" src="image/gallery/portfolio-5.png" alt="" data-name="graphic" />
+              <img class="portfolio-gallery__image" src="image/gallery/portfolio-6.png" alt="" data-name="web" />
+              <img class="portfolio-gallery__image" src="image/gallery/portfolio-7.png" alt="" data-name="artwork" />
+              <img class="portfolio-gallery__image" src="image/gallery/portfolio-8.png" alt="" data-name="graphic" />
+              <img class="portfolio-gallery__image" src="image/gallery/portfolio-9.png" alt="" data-name="web" />
+              <img class="portfolio-gallery__image" src="image/gallery/portfolio-10.png" alt="" data-name="artwork" />
+              <img class="portfolio-gallery__image" src="image/gallery/portfolio-11.png" alt="" data-name="graphic" />
+              <img class="portfolio-gallery__image" src="image/gallery/portfolio-12.png" alt="" data-name="web" />
             </div>
           </div>
         </div>

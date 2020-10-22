@@ -1,7 +1,6 @@
 
 .wrapper {
     @include flex(center,space-between);
-    width: 1020px;
+    width: $content-width;
     margin: 0 40px;
-  
   }
