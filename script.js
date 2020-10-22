@@ -126,7 +126,8 @@ function setActiveArchorToScroll() {
   window.addEventListener("scroll", () => {
     elements.forEach((elem) => {
       const offsetTop = elem.offsetTop - 10;
-      const offsetBottom = elem.offsetTop + parseInt(getComputedStyle(elem).height);
+      const offsetBottom =
+        elem.offsetTop + parseInt(getComputedStyle(elem).height);
       const offsetY = window.pageYOffset;
 
       if (offsetY >= offsetTop && offsetY <= offsetBottom) {
