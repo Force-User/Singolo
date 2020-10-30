@@ -1,6 +1,6 @@
 .portfolio {
-  background-color: #2d303a;
-  border-bottom: 6px solid #323746;
+  background-color: $color-background;
+  border-bottom: 6px solid $color-border;
   transition: 1s;
   & .wrapper {
     flex-direction: column;
@@ -11,7 +11,6 @@
   &-content {
     width: 100%;
   }
-
   &__text {
     font-size: 18px;
     line-height: 30px;
@@ -26,35 +25,35 @@
     justify-content: space-between;
     margin: 42px 0 18px;
     font-size: 12px;
-   
-
     &__tab {
       padding: 0 7px;
       cursor: pointer;
-      color: #767e9e;
+      color: $color-text;
       border: 1px solid;
       border-radius: 5px;
       transition: 0.3s;
+      &--selected {
+        color: $color-light;
+      }
       &:hover {
-        border: 1px solid #fff;
-        color: #fff;
+        border: 1px solid $color-light;
+        color: $color-light;
       }
     }
   }
   &-gallery {
     display: grid;
-    grid-template-columns: repeat(4,1fr);
-    grid-template-rows:repeat(3,1fr);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     grid-gap: 20px;
     width: 100%;
-
-
     &__image {
-      
       transition: 0.5s;
-  
+      & img {
+        width: 100%;
+      }
       &:hover {
-        box-shadow: 0 0 5px 3px #fff;
+        box-shadow: 0 0 5px 3px $color-light;
       }
       &:nth-child(n + 13) {
         display: none;
@@ -62,16 +61,9 @@
     }
   }
 }
-
 .image-priority {
   order: 0;
 }
-
-
 .image-no-priority {
   order: 1;
-}
-
-.tab-selected {
-  color: $color-light;
 }

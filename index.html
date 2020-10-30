@@ -8,7 +8,6 @@
       rel="stylesheet"
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
     />
-
     <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <link
@@ -19,83 +18,94 @@
     <title>SINGOLO*</title>
   </head>
   <body>
-    <header class="header" id="headerSection">
+    <header class="header" id="header-section">
       <div class="burger"></div>
       <div class="header--fixed">
-        
         <div class="wrapper">
-       
-        <div class="logo">
-          <a href="#"
-            ><h1>
-              singolo
-              <span class="logo--colored">*</span>
-            </h1>
-          </a>
+          <div class="logo">
+            <a href="#"
+              ><h1>
+                singolo
+                <span class="logo--colored">*</span>
+              </h1>
+            </a>
+          </div>
+          <nav>
+            <ul class="navigation">
+              <li>
+                <a
+                  class="navigation__link active"
+                  href="#"
+                  data-name="header-section"
+                  >HOME</a
+                >
+              </li>
+              <li>
+                <a
+                  class="navigation__link"
+                  href="#"
+                  data-name="section-services"
+                  >SERVICES</a
+                >
+              </li>
+              <li>
+                <a
+                  class="navigation__link"
+                  href="#"
+                  data-name="section-portfolio"
+                  >PORTFOLIO</a
+                >
+              </li>
+              <li><a class="navigation__link" href="#">ABOUT</a></li>
+              <li><a class="navigation__link" href="#">CONTACT</a></li>
+            </ul>
+          </nav>
         </div>
-        <nav>
-          <ul class="navigation">
-            <li class="active">
-              <a class="navigation__link" href="#headerSection">HOME</a>
-            </li>
-            
-            <li>
-              <a class="navigation__link" href="#sectionServices">SERVICES</a>
-            </li>
-
-            <li>
-              <a class="navigation__link" href="#portfolioSection">PORTFOLIO</a>
-            </li>
-            <li><a class="navigation__link" href="#">ABOUT</a></li>
-            <li><a class="navigation__link" href="#">CONTACT</a></li>
-          </ul>
-        </nav>
       </div>
+      <div class="menu">
+        <div class="menu-content">
+          <div class="logo">
+            <a href="#">
+              <span>
+                singolo
+                <span class="logo--colored">*</span>
+              </span>
+            </a>
+          </div>
+          <nav>
+            <ul class="navigation">
+              <li class="active">
+                <a class="navigation__link" href="#" data-name="header-section"
+                  >HOME</a
+                >
+              </li>
+              <li>
+                <a
+                  class="navigation__link"
+                  href="#"
+                  data-name="section-services"
+                  >SERVICES</a
+                >
+              </li>
+              <li>
+                <a
+                  class="navigation__link"
+                  href="#"
+                  data-name="section-portfolio"
+                  >PORTFOLIO</a
+                >
+              </li>
+              <li><a class="navigation__link" href="#">ABOUT</a></li>
+              <li><a class="navigation__link" href="#">CONTACT</a></li>
+            </ul>
+          </nav>
+        </div>
       </div>
-      
     </header>
-    <div class="menu">
-      <div class="menu-content">
-        <div class="logo">
-          <a href="#">
-            <span>
-              singolo
-              <span class="logo--colored">*</span>
-            </span>
-          </a>
-        </div>
-
-        <nav>
-          <ul class="navigation">
-            <li class="active">
-              <a class="navigation__link" href="#headerSection">HOME</a>
-            </li>
-
-            <li>
-              <a class="navigation__link" href="#sectionServices">SERVICES</a>
-            </li>
-
-            <li>
-              <a class="navigation__link" href="#portfolioSection">PORTFOLIO</a>
-            </li>
-
-            <li><a class="navigation__link" href="#">ABOUT</a></li>
-
-            <li><a class="navigation__link" href="#">CONTACT</a></li>
-          </ul>
-        </nav>
-      </div>
-    </div>
-
     <main>
-    <!---->  <section class="sliders">
-
-      
-        
+      <section class="slider">
         <div class="swiper-container">
-          <!-- Additional required wrapper -->
           <div class="swiper-wrapper">
-            <!-- Slides -->
             <div class="swiper-slide">
               <img src="image/sliders/Slide-1.png" alt="" />
             </div>
@@ -103,17 +113,16 @@
               <img src="image/sliders/Slide-2.png" alt="" />
             </div>
           </div>
-          <!-- If we need pagination -->
+
           <div class="swiper-pagination"></div>
 
-          <!-- If we need navigation buttons -->
           <div class="swiper-button-prev"></div>
           <div class="swiper-button-next"></div>
         </div>
       </section>
-      <section class="services" id="sectionServices">
+      <section class="services" id="section-services">
         <div class="wrapper">
-          <div class>
+          <div>
             <h2>Our Services</h2>
             <p class="services__text">
               Fusce dapibus, tellus ac cursus commodo, tortor mauris
@@ -122,10 +131,13 @@
               cursus commodo, tortor mauris condimentum nibh.
             </p>
           </div>
-          <div class="services-content">
-            <div class="service-info">
+          <ul class="services-content">
+            <li class="service-info">
               <div>
-                <img src="image/services/services-item-1.png" alt="" />
+                <img
+                  src="image/services/services-item-1--nocircle.svg"
+                  alt=""
+                />
               </div>
               <div>
                 <h3>Custom Design</h3>
@@ -134,10 +146,13 @@
                   quam laoreet, viverra lacus ut, ultrices velit.
                 </p>
               </div>
-            </div>
-            <div class="service-info">
+            </li>
+            <li class="service-info">
               <div>
-                <img src="image/services/services-item-2.png" alt="" />
+                <img
+                  src="image/services/services-item-2--nocircle.svg"
+                  alt=""
+                />
               </div>
               <div>
                 <h3>Inovative Ideas</h3>
@@ -146,10 +161,13 @@
                   purus, nec rutrum tellus dolor id lorem.
                 </p>
               </div>
-            </div>
-            <div class="service-info">
+            </li>
+            <li class="service-info">
               <div>
-                <img src="image/services/services-item-3.png" alt="" />
+                <img
+                  src="image/services/services-item-3--nocircle.svg"
+                  alt=""
+                />
               </div>
               <div>
                 <h3>Love Is The Answer</h3>
@@ -158,10 +176,13 @@
                   turpis, et consequat felis. Quisque condimentum.
                 </p>
               </div>
-            </div>
-            <div class="service-info">
+            </li>
+            <li class="service-info">
               <div>
-                <img src="image/services/services-item-4.png" alt="" />
+                <img
+                  src="image/services/services-item-4--nocircle.svg"
+                  alt=""
+                />
               </div>
               <div>
                 <h3>Responsive Layout</h3>
@@ -170,10 +191,13 @@
                   blandit nunc ligula. Praesent elit leo.
                 </p>
               </div>
-            </div>
-            <div class="service-info">
+            </li>
+            <li class="service-info">
               <div>
-                <img src="image/services/services-item-5.png" alt="" />
+                <img
+                  src="image/services/services-item-5--nocircle.svg"
+                  alt=""
+                />
               </div>
               <div>
                 <h3>24 / 7 Support</h3>
@@ -182,10 +206,13 @@
                   Nulla a sem erat. Pellentesque egestas venenatis lorem .
                 </p>
               </div>
-            </div>
-            <div class="service-info">
+            </li>
+            <li class="service-info">
               <div>
-                <img src="image/services/services-item-6.png" alt="" />
+                <img
+                  src="image/services/services-item-6--nocircle.svg"
+                  alt=""
+                />
               </div>
               <div>
                 <h3>Feel Like A Star</h3>
@@ -194,11 +221,11 @@
                   nibh. Fusce vitae aliquam tellus.
                 </p>
               </div>
-            </div>
-          </div>
+            </li>
+          </ul>
         </div>
       </section>
-      <section class="portfolio" id="portfolioSection">
+      <section class="portfolio" id="section-portfolio">
         <div class="wrapper">
           <div>
             <h2 class="portfolio__title">Portfolio</h2>
@@ -210,26 +237,61 @@
           <div class="portfolio-content">
             <div class="portfolio-tabs">
               <ul class="portfolio-tablist">
-                <li class="portfolio-tablist__tab tab-selected" data-name="all">All</li>
-                <li class="portfolio-tablist__tab" data-name="web">Web Design</li>
-                <li class="portfolio-tablist__tab" data-name="graphic">Graphic Design</li>
-                <li class="portfolio-tablist__tab" data-name="artwork">Artwork</li>
+                <li
+                  class="portfolio-tablist__tab portfolio-tablist__tab--selected"
+                  data-name="all"
+                >
+                  All
+                </li>
+                <li class="portfolio-tablist__tab" data-name="web">
+                  Web Design
+                </li>
+                <li class="portfolio-tablist__tab" data-name="graphic">
+                  Graphic Design
+                </li>
+                <li class="portfolio-tablist__tab" data-name="artwork">
+                  Artwork
+                </li>
               </ul>
             </div>
-            <div class="portfolio-gallery">
-              <img class="portfolio-gallery__image" src="image/gallery/portfolio-1.png" alt="" data-name="artwork" />
-              <img class="portfolio-gallery__image" src="image/gallery/portfolio-2.png" alt="" data-name="graphic" />
-              <img class="portfolio-gallery__image" src="image/gallery/portfolio-3.png" alt="" data-name="web" />
-              <img class="portfolio-gallery__image" src="image/gallery/portfolio-4.png" alt="" data-name="artwork" />
-              <img class="portfolio-gallery__image" src="image/gallery/portfolio-5.png" alt="" data-name="graphic" />
-              <img class="portfolio-gallery__image" src="image/gallery/portfolio-6.png" alt="" data-name="web" />
-              <img class="portfolio-gallery__image" src="image/gallery/portfolio-7.png" alt="" data-name="artwork" />
-              <img class="portfolio-gallery__image" src="image/gallery/portfolio-8.png" alt="" data-name="graphic" />
-              <img class="portfolio-gallery__image" src="image/gallery/portfolio-9.png" alt="" data-name="web" />
-              <img class="portfolio-gallery__image" src="image/gallery/portfolio-10.png" alt="" data-name="artwork" />
-              <img class="portfolio-gallery__image" src="image/gallery/portfolio-11.png" alt="" data-name="graphic" />
-              <img class="portfolio-gallery__image" src="image/gallery/portfolio-12.png" alt="" data-name="web" />
-            </div>
+            <ul class="portfolio-gallery">
+              <li class="portfolio-gallery__image" data-name="artwork">
+                <img src="image/gallery/portfolio-1.png" alt="" />
+              </li>
+              <li class="portfolio-gallery__image" data-name="graphic">
+                <img src="image/gallery/portfolio-2.png" alt="" />
+              </li>
+              <li class="portfolio-gallery__image" data-name="web">
+                <img src="image/gallery/portfolio-3.png" alt="" />
+              </li>
+              <li class="portfolio-gallery__image" data-name="artwork">
+                <img src="image/gallery/portfolio-4.png" alt="" />
+              </li>
+              <li class="portfolio-gallery__image" data-name="graphic">
+                <img src="image/gallery/portfolio-5.png" alt="" />
+              </li>
+              <li class="portfolio-gallery__image" data-name="web">
+                <img src="image/gallery/portfolio-6.png" alt="" />
+              </li>
+              <li class="portfolio-gallery__image" data-name="artwork">
+                <img src="image/gallery/portfolio-7.png" alt="" />
+              </li>
+              <li class="portfolio-gallery__image" data-name="graphic">
+                <img src="image/gallery/portfolio-8.png" alt="" />
+              </li>
+              <li class="portfolio-gallery__image" data-name="web">
+                <img src="image/gallery/portfolio-9.png" alt="" />
+              </li>
+              <li class="portfolio-gallery__image" data-name="artwork">
+                <img src="image/gallery/portfolio-10.png" alt="" />
+              </li>
+              <li class="portfolio-gallery__image" data-name="graphic">
+                <img src="image/gallery/portfolio-11.png" alt="" />
+              </li>
+              <li class="portfolio-gallery__image" data-name="web">
+                <img src="image/gallery/portfolio-12.png" alt="" />
+              </li>
+            </ul>
           </div>
         </div>
       </section>
@@ -240,30 +302,29 @@
         <nav>
           <ul class="social">
             <li class="social__link">
-              <a href=""
-                ><img src="image/footer/ico-facebook--nocircle.png" alt=""
+              <a href="#"
+                ><img src="image/footer/ico-facebook--nocircle.svg" alt=""
               /></a>
             </li>
             <li class="social__link">
-              <a href=""
-                ><img src="image/footer/ico-google-plus--nocircle.png" alt=""
+              <a href="#"
+                ><img src="image/footer/ico-google-plus--nocircle.svg" alt=""
               /></a>
             </li>
             <li class="social__link">
-              <a href=""
-                ><img src="image/footer/ico-twitter--nocircle.png" alt=""
+              <a href="#"
+                ><img src="image/footer/ico-twitter--nocircle.svg" alt=""
               /></a>
             </li>
             <li class="social__link">
-              <a href=""
-                ><img src="image/footer/ico-linkedin--nocircle.png" alt=""
+              <a href="#"
+                ><img src="image/footer/ico-linkedin--nocircle.svg" alt=""
               /></a>
             </li>
           </ul>
         </nav>
       </div>
     </footer>
-
     <script src="script.js"></script>
   </body>
 </html>

@@ -1,6 +1,5 @@
 .navigation {
-  @include flex(center,space-evenly);
-  width: 375px;
+  @include flex(center, space-evenly);
   font-size: 12px;
   list-style-type: none;
   & .active {
@@ -9,12 +8,14 @@
   & li {
     position: relative;
     color: $color-light;
-    &:after{
+    margin-right: 20px;
+    word-wrap: break-word;
+    &:after {
       content: "";
       position: absolute;
       bottom: 5px;
       right: -13px;
-      padding:2px ;
+      padding: 2px;
       background-color: $color-light;
       border-radius: 50%;
     }
@@ -22,10 +23,7 @@
       display: none;
     }
   }
-
   &__link {
-    
-    
     letter-spacing: -0.42px;
     text-align: right;
     color: inherit;

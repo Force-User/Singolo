@@ -9,18 +9,15 @@
   list-style-type: none;
   text-align: justify;
 }
-
 header {
   @extend %flex;
 }
 section {
   @extend %flex;
 }
-
 footer {
   @extend %flex;
 }
-
 h2 {
   color: $color-title;
   font-size: 30px;
@@ -31,7 +28,6 @@ h3 {
   font-size: 18px;
   margin-bottom: 7px;
 }
-
 p {
   color: $color-text;
 }

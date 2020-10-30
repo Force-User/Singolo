@@ -1,15 +1,23 @@
 "use strict";
-
 //=====================================VARIABLES==================================
-const navigationLink = document.querySelectorAll(".navigation li");
+const header = document.querySelector('.header');
 const burgerMenu = document.querySelector(".burger");
-const portfolioTabs = document.querySelectorAll(".portfolio-tablist__tab");
-
-navigationLink.forEach((item) => item.addEventListener("click", jumpToArchor));
-burgerMenu.addEventListener("click", selectBurgerMenu);
-portfolioTabs.forEach((item) =>
-  item.addEventListener("click", selectClickedTab)
-);
+const portfolio = document.querySelector(".portfolio-content");
+header.addEventListener('click', (e) => {
+  const currentElement = e.target;
+  if(currentElement.classList.contains('navigation__link')) {
+    jumpToArchor(e);
+  }
+  if(currentElement === burgerMenu) {
+    selectBurgerMenu();
+  }
+})
+portfolio.addEventListener('click', (e) => {
+  const currentElement = e.target;
+  if(currentElement.classList.contains("portfolio-tablist__tab")){
+    selectClickedTab(currentElement);
+  }
+})
 //====================================Slide==========================================
 const swiper = new Swiper(".swiper-container", {
   slidesPerView: 1,
@@ -25,34 +33,41 @@ const swiper = new Swiper(".swiper-container", {
   },
 });
 //=======================================ACTIVE-ARCHOR========================================
-function jumpToArchor() {
-  const currentElement = this;
-  setSelectedLinkToActive(currentElement);
-  const id = this.firstElementChild.getAttribute("href");
+function jumpToArchor(event) {
+  setSelectedLinkToActive(event);
 
+const currentElement = event.target;
+
+  const elementName = currentElement.dataset.name;
+  const sectionPadding = document.querySelector(".area-padding");
+ 
   try {
-    if (document.querySelector(".area-padding")) {
-      document.querySelector(".area-padding").classList.remove("area-padding");
+    if (sectionPadding) {
+      sectionPadding.classList.remove("area-padding");
     }
-
-    const block = document.querySelector(`${id}`);
-    if (block !== document.querySelector(".header")) {
-      block.scrollIntoView({ block: "start", behavior: "smooth" });
+    const block = document.querySelector(`#${elementName}`);
+    
+    if (block !== header) {
       block.classList.add("area-padding");
-    } else {
+    } 
       block.scrollIntoView({ block: "start", behavior: "smooth" });
-    }
-  } catch (e) {
+    
+  } catch {
   } finally {
     burgerMenu.click();
   }
 }
 
-function setSelectedLinkToActive(elem) {
+function setSelectedLinkToActive(event) {
+  const currentElement = event.target;
+  
   const active = document.querySelector(".active");
   event.preventDefault();
+ 
   active.classList.toggle("active");
-  elem.classList.toggle("active");
+  currentElement.classList.toggle("active");
+  
+  
 }
 
 //================================================BURGER-MENU=======================================
@@ -61,16 +76,16 @@ function selectBurgerMenu() {
   const navigationMenu = document.querySelector(".menu");
   const headerLogo = document.querySelector(".header .logo");
 
-  const elementStyleList = getComputedStyle(this);
+  const elementStyleList = getComputedStyle(burgerMenu);
   if (elementStyleList.display !== "none") {
-    toggleBurgerMenu(this, navigationMenu, headerLogo);
+    toggleBurgerMenu(burgerMenu, navigationMenu, headerLogo);
   }
 }
 
 function toggleBurgerMenu(burger, menu, logo) {
   burger.classList.toggle("burger-active");
   menu.classList.toggle("menu-show");
-  logo.classList.toggle("hide-logo");
+  logo.classList.toggle("logo-hidde");
 
   if (!burger.classList.contains("burger-active")) {
     menu.classList.add("menu-hidde");
@@ -79,11 +94,11 @@ function toggleBurgerMenu(burger, menu, logo) {
   }
 }
 //===========================================TABS=================================================
-function selectClickedTab() {
-  const nameTab = this.getAttribute("data-name");
-  const selectedTab = document.querySelector(".tab-selected");
-  selectedTab.classList.remove("tab-selected");
-  this.classList.add("tab-selected");
+function selectClickedTab(currentElement) {
+  const nameTab = currentElement.dataset.name;
+  const selectedTab = document.querySelector(".portfolio-tablist__tab--selected");
+  selectedTab.classList.remove("portfolio-tablist__tab--selected");
+  currentElement.classList.add("portfolio-tablist__tab--selected");
 
   if (nameTab === "all") {
     showAllTabs();
@@ -105,7 +120,7 @@ function filterImageBySelectedTab(nameTab) {
     image.classList.add("image-no-priority");
     image.classList.remove("image-priorirty");
 
-    const imageName = image.getAttribute("data-name");
+    const imageName = image.dataset.name;
     if (imageName === nameTab) {
       image.classList.add("image-priority");
 
@@ -118,7 +133,6 @@ function filterImageBySelectedTab(nameTab) {
 setActiveArchorToScroll();
 
 function setActiveArchorToScroll() {
-  const header = document.querySelector(".header");
   const services = document.querySelector(".services");
   const portfolio = document.querySelector(".portfolio");
   const elements = [header, services, portfolio];
@@ -132,7 +146,7 @@ function setActiveArchorToScroll() {
       if (offsetY >= offsetTop && offsetY <= offsetBottom) {
         const activeElement = document.querySelectorAll(".active");
         const currentElement = document.querySelectorAll(
-          `a[href="#${elem.id}"]`
+          `a[data-name="${elem.id}"]`
         );
 
         activeElement.forEach((item) => item.classList.toggle("active"));
