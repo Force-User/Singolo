@@ -3,7 +3,6 @@
   &__link {
     width: 32px;
     height: 32px;
-    margin-left: 8px;
     @include flex();
     border: 1px solid $color-text;
     border-radius: 50%;
@@ -12,8 +11,8 @@
     &:hover {
       box-shadow: 0 0 5px 1px $color-text;
     }
-    &:first-child {
-      margin: 0;
+    &:nth-child(n+2) {
+      margin-left: 8px;
     }
   }
 }

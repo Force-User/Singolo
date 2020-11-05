@@ -353,8 +353,11 @@ p {
 
 .navigation li {
   position: relative;
-  margin-right: 20px;
   word-wrap: break-word;
+}
+
+.navigation li:nth-child(n + 2) {
+  margin-left: 20px;
 }
 
 .navigation li:after {
@@ -542,7 +545,6 @@ p {
 .social__link {
   width: 32px;
   height: 32px;
-  margin-left: 8px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -564,8 +566,8 @@ p {
           box-shadow: 0 0 5px 1px #767E9E;
 }
 
-.social__link:first-child {
-  margin: 0;
+.social__link:nth-child(n+2) {
+  margin-left: 8px;
 }
 
 html::-webkit-scrollbar {
