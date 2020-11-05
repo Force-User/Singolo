@@ -1,13 +1,8 @@
 .navigation {
   @include flex(center, space-evenly);
   font-size: 12px;
-  list-style-type: none;
-  & .active {
-    color: $color-active;
-  }
   & li {
     position: relative;
-    color: $color-light;
     margin-right: 20px;
     word-wrap: break-word;
     &:after {
@@ -25,10 +20,12 @@
   }
   &__link {
     letter-spacing: -0.42px;
-    text-align: right;
-    color: inherit;
+    color: $color-light;
     cursor: pointer;
     transition: 0.3s;
+    &--active {
+      color: $color-active;
+    }
     &:hover {
       text-shadow: 0px 0px 2px $color-light;
     }

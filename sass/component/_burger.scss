@@ -6,12 +6,12 @@
   width: 20px;
   height: 25px;
   background: url("image/header/Burger-menu-icon.svg") center no-repeat;
-  background-size:contain ;
+  background-size:contain;
   transform: rotate(0deg);
   transition: 0.3s;
   cursor: pointer;
   z-index: 4;
-  &-active {
+  &--active {
     transform :rotate(90deg);
   }
 }

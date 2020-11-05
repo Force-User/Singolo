@@ -1,23 +1,31 @@
 "use strict";
 //=====================================VARIABLES==================================
-const header = document.querySelector('.header');
-const burgerMenu = document.querySelector(".burger");
-const portfolio = document.querySelector(".portfolio-content");
-header.addEventListener('click', (e) => {
-  const currentElement = e.target;
-  if(currentElement.classList.contains('navigation__link')) {
+const header = document.querySelector(".header");
+const navigationMenu = header.querySelector(".menu");
+const headerLogo = header.querySelector(".logo");
+const burgerMenu = header.querySelector(".burger");
+const services = document.querySelector(".services");
+const portfolio = document.querySelector(".portfolio");
+const portfolioContent = portfolio.querySelector(".portfolio-content");
+const allImages = portfolioContent.querySelectorAll(".portfolio-gallery__image");
+
+header.addEventListener("click", (e) => {
+  const selectedElement = e.target;
+  if (selectedElement.classList.contains("navigation__link")) {
     jumpToArchor(e);
+    return;
   }
-  if(currentElement === burgerMenu) {
+  if (selectedElement.closest("div") === burgerMenu) {
     selectBurgerMenu();
   }
-})
-portfolio.addEventListener('click', (e) => {
-  const currentElement = e.target;
-  if(currentElement.classList.contains("portfolio-tablist__tab")){
-    selectClickedTab(currentElement);
+});
+
+portfolioContent.addEventListener("click", (e) => {
+  const selectedElement = e.target.closest("li");
+  if (selectedElement.classList.contains("portfolio-tablist__tab")) {
+    selectClickedTab(selectedElement);
   }
-})
+});
 //====================================Slide==========================================
 const swiper = new Swiper(".swiper-container", {
   slidesPerView: 1,
@@ -36,69 +44,66 @@ const swiper = new Swiper(".swiper-container", {
 function jumpToArchor(event) {
   setSelectedLinkToActive(event);
 
-const currentElement = event.target;
-
-  const elementName = currentElement.dataset.name;
-  const sectionPadding = document.querySelector(".area-padding");
- 
+  const selectedElement = event.target;
+  const selectedElementName = selectedElement.dataset.name;
+  const block = document.querySelector(`#${selectedElementName}`);
+  const currentSectionPadding = document.querySelector(".wrapper__area-padding");
+  
   try {
-    if (sectionPadding) {
-      sectionPadding.classList.remove("area-padding");
+    if (currentSectionPadding) {
+      currentSectionPadding.classList.remove("wrapper__area-padding");
     }
-    const block = document.querySelector(`#${elementName}`);
     
     if (block !== header) {
-      block.classList.add("area-padding");
-    } 
-      block.scrollIntoView({ block: "start", behavior: "smooth" });
-    
+      block.classList.add("wrapper__area-padding");
+    }
+    block.scrollIntoView({ block: "start", behavior: "smooth" });
+
   } catch {
   } finally {
-    burgerMenu.click();
+    if (burgerMenu.classList.contains("burger--active")) {
+      burgerMenu.click();
+    }
   }
 }
 
 function setSelectedLinkToActive(event) {
-  const currentElement = event.target;
-  
-  const active = document.querySelector(".active");
   event.preventDefault();
- 
-  active.classList.toggle("active");
-  currentElement.classList.toggle("active");
-  
+  if(event.target.dataset.name) {
+    const selectedElement = event.target;
+    const currentActiveElement = header.querySelector(".navigation__link--active");
+    currentActiveElement.classList.toggle("navigation__link--active");
+    selectedElement.classList.toggle("navigation__link--active");
+  }
+  return;
   
 }
-
 //================================================BURGER-MENU=======================================
 
 function selectBurgerMenu() {
-  const navigationMenu = document.querySelector(".menu");
-  const headerLogo = document.querySelector(".header .logo");
-
-  const elementStyleList = getComputedStyle(burgerMenu);
-  if (elementStyleList.display !== "none") {
-    toggleBurgerMenu(burgerMenu, navigationMenu, headerLogo);
+  const burgerStyleList = getComputedStyle(burgerMenu);
+  if (burgerStyleList.display !== "none") {
+    toggleBurgerMenu();
   }
 }
 
-function toggleBurgerMenu(burger, menu, logo) {
-  burger.classList.toggle("burger-active");
-  menu.classList.toggle("menu-show");
-  logo.classList.toggle("logo-hidde");
+function toggleBurgerMenu() {
+  burgerMenu.classList.toggle("burger--active");
+  navigationMenu.classList.toggle("menu--show");
+  headerLogo.classList.toggle("logo--hidden");
 
-  if (!burger.classList.contains("burger-active")) {
-    menu.classList.add("menu-hidde");
+  if (!burgerMenu.classList.contains("burger--active")) {
+    navigationMenu.classList.add("menu--hidden");
   } else {
-    menu.classList.remove("menu-hidde");
+    navigationMenu.classList.remove("menu--hidden");
   }
 }
 //===========================================TABS=================================================
-function selectClickedTab(currentElement) {
-  const nameTab = currentElement.dataset.name;
-  const selectedTab = document.querySelector(".portfolio-tablist__tab--selected");
+function selectClickedTab(selectedElement) {
+  const nameTab = selectedElement.dataset.name;
+  const selectedTab = portfolioContent.querySelector(".portfolio-tablist__tab--selected");
   selectedTab.classList.remove("portfolio-tablist__tab--selected");
-  currentElement.classList.add("portfolio-tablist__tab--selected");
+  selectedElement.classList.add("portfolio-tablist__tab--selected");
 
   if (nameTab === "all") {
     showAllTabs();
@@ -108,50 +113,46 @@ function selectClickedTab(currentElement) {
 }
 
 function showAllTabs() {
-  const allImages = document.querySelectorAll(".portfolio-gallery__image");
   allImages.forEach((image) => {
-    image.classList.remove("image-no-priority", "image-priority");
+    image.classList.remove("portfolio-gallery__image--no-priority", "portfolio-galley__image--priority");
   });
 }
 
 function filterImageBySelectedTab(nameTab) {
-  const allImages = document.querySelectorAll(".portfolio-gallery__image");
   allImages.forEach((image) => {
-    image.classList.add("image-no-priority");
-    image.classList.remove("image-priorirty");
+    image.classList.add("portfolio-gallery__image--no-priority");
+    image.classList.remove("portfolio-gallery__image--priorirty");
 
     const imageName = image.dataset.name;
-    if (imageName === nameTab) {
-      image.classList.add("image-priority");
 
-      image.classList.remove("image-no-priority");
+    if (imageName === nameTab) {
+      image.classList.add("portfolio-gallery__image--priority");
+      image.classList.remove("portfolio-gallery__image--no-priority");
     }
   });
 }
 //===========================================SCROLL=============================================
+const elements = [header, services, portfolio];
 
-setActiveArchorToScroll();
-
-function setActiveArchorToScroll() {
-  const services = document.querySelector(".services");
-  const portfolio = document.querySelector(".portfolio");
-  const elements = [header, services, portfolio];
-
-  window.addEventListener("scroll", () => {
-    elements.forEach((elem) => {
-      const offsetTop = elem.offsetTop - 10;
-      const offsetBottom = elem.offsetTop + parseInt(getComputedStyle(elem).height);
-      const offsetY = window.pageYOffset;
-
-      if (offsetY >= offsetTop && offsetY <= offsetBottom) {
-        const activeElement = document.querySelectorAll(".active");
-        const currentElement = document.querySelectorAll(
-          `a[data-name="${elem.id}"]`
-        );
-
-        activeElement.forEach((item) => item.classList.toggle("active"));
-        currentElement.forEach((item) => item.classList.toggle("active"));
-      }
-    });
+window.addEventListener("scroll", () => {
+  elements.forEach((elem) => {
+    const offsetTop = elem.offsetTop - 10;
+    const offsetBottom = elem.offsetTop + parseInt(getComputedStyle(elem).height);
+    const offsetY = window.pageYOffset;
+    if (offsetY >= offsetTop && offsetY <= offsetBottom) {
+      const currentActiveElement = header.querySelectorAll(".navigation__link--active");
+      const currentElement = document.querySelectorAll(`a[data-name="${elem.id}"]`);
+      currentActiveElement.forEach((item) => item.classList.toggle("navigation__link--active"));
+      currentElement.forEach((item) => item.classList.toggle("navigation__link--active"));
+    }
   });
-}
+});
+
+
+window.addEventListener("orientationchange", () => {
+  if(burgerMenu.classList.contains("burger--active")) {
+    toggleBurgerMenu();
+  }
+})
+
+

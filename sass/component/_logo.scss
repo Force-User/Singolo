@@ -9,9 +9,10 @@
   &--colored {
     color: $color-active;
   }
-  &-hidde {
+  &--hidden {
     position: absolute;
-    top: -100%;
+    top: -50%;
+  transition: .3s;
     &::before {
       content: "";
       position: fixed;

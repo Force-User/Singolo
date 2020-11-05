@@ -1,11 +1,9 @@
 .header {
   position: relative;
   height: 89px;
+  font-weight: 700;
   background-color: $color-background;
   border-bottom: 6px solid $color-border;
-  & > .wrapper {
-    font-weight: 700;
-  }
   & .logo h1 {
     font-size: 25px;
   }

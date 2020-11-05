@@ -9,19 +9,15 @@
   list-style-type: none;
   text-align: justify;
 }
-header {
-  @extend %flex;
-}
-section {
-  @extend %flex;
-}
+header,
+section,
 footer {
   @extend %flex;
 }
 h2 {
   color: $color-title;
   font-size: 30px;
-  padding-bottom: 18px;
+  margin-bottom: 18px;
 }
 h3 {
   color: $color-title;

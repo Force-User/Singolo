@@ -12,10 +12,8 @@
   z-index: 3;
   &-content {
     height: 100%;
-    display: flex;
+    @include flex(flex-start,center);
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
   }
   & .logo {
     position: absolute;
@@ -24,9 +22,7 @@
     font-size: 19px;
   }
   & .navigation {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    @include flex(flex-start);
     width: auto;
   }
   &  li {
@@ -35,10 +31,10 @@
   & .navigation__link {
     font-size: 24px;
   }
-  &-show {
+  &--show {
     animation: show-menu .5s forwards;
   }
-  &-hidde {
+  &--hidden {
     animation: hidde-menu .5s forwards;
   }
 }

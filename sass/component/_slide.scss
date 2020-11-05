@@ -3,9 +3,6 @@
 }
 
 .swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: $color-light;
   background-color: $color-slide;
   border-bottom: 6px solid $color-border-slide;
   @include flex(center, center);

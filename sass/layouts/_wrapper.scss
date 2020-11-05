@@ -2,7 +2,7 @@
   @include flex(center, space-between);
   width: $content-width;
   margin: 0 40px;
-}
-.area-padding {
-  padding-top: 35px;
+  &__area-padding {
+    padding-top: 35px;
+  }
 }
