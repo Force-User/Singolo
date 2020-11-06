@@ -12,7 +12,7 @@ const allImages = portfolioContent.querySelectorAll(".portfolio-gallery__image")
 header.addEventListener("click", (e) => {
   const selectedElement = e.target;
   if (selectedElement.classList.contains("navigation__link")) {
-    jumpToArchor(e);
+    jumpToAnchor(e);
     return;
   }
   if (selectedElement.closest("div") === burgerMenu) {
@@ -40,8 +40,8 @@ const swiper = new Swiper(".swiper-container", {
     prevEl: ".swiper-button-prev",
   },
 });
-//=======================================ACTIVE-ARCHOR========================================
-function jumpToArchor(event) {
+//=======================================ACTIVE-ANCHOR========================================
+function jumpToAnchor(event) {
   setSelectedLinkToActive(event);
 
   const selectedElement = event.target;
