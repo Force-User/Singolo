@@ -1,0 +1,21 @@
+.swiper-container {
+  width: 100%;
+}
+
+.swiper-slide {
+  background-color: $color-slide;
+  border-bottom: 6px solid $color-border-slide;
+  @include flex(center, center);
+}
+.swiper-slide:nth-child(2n) {
+  border: none;
+  background-color: $color-active;
+}
+.swiper-button-prev,
+.swiper-button-next {
+  transition: 0.3s;
+}
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  transform: scale(1.3);
+}

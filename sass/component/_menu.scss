@@ -1,0 +1,56 @@
+.menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 278px;
+  height: 100vh;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  background-color: $color-background;
+  transform:rotate(0deg);
+  z-index: 3;
+  &-content {
+    height: 100%;
+    @include flex(flex-start,center);
+    flex-direction: column;
+  }
+  & .logo {
+    position: absolute;
+    top:30px;
+    left: 70px;
+    font-size: 19px;
+  }
+  & .navigation {
+    @include flex(flex-start);
+    width: auto;
+  }
+  &  li {
+    margin-bottom: 25px;
+  }
+  & .navigation__link {
+    font-size: 24px;
+  }
+  &--show {
+    animation: show-menu .5s forwards;
+  }
+  &--hidden {
+    animation: hidde-menu .5s forwards;
+  }
+}
+@keyframes show-menu {
+    0%{
+        left: -100%;
+    }
+    100% {
+        left:0;
+    }
+}
+@keyframes hidde-menu {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: -100%;
+    }
+}

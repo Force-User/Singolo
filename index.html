@@ -1,11 +1,327 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Singolo</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <title>SINGOLO*</title>
+  </head>
+  <body>
+    <header class="header" id="header-section">
+      <div class="burger"></div>
+      <div class="header--fixed">
+        <div class="wrapper">
+          <div class="logo">
+            <a href="#"
+              ><h1>
+                singolo
+                <span class="logo--colored">*</span>
+              </h1>
+            </a>
+          </div>
+          <nav>
+            <ul class="navigation">
+              <li>
+                <a
+                  class="navigation__link navigation__link--active"
+                  href="#"
+                  data-name="header-section"
+                  > HOME</a
+                >
+              </li>
+              <li>
+                <a
+                  class="navigation__link"
+                  href="#"
+                  data-name="section-services"
+                  >SERVICES</a
+                >
+              </li>
+              <li>
+                <a
+                  class="navigation__link"
+                  href="#"
+                  data-name="section-portfolio"
+                  >PORTFOLIO</a
+                >
+              </li>
+              <li><a class="navigation__link" href="#">ABOUT</a></li>
+              <li><a class="navigation__link" href="#">CONTACT</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="menu">
+        <div class="menu-content">
+          <div class="logo">
+            <a href="#">
+              <span>
+                singolo
+                <span class="logo--colored">*</span>
+              </span>
+            </a>
+          </div>
+          <nav>
+            <ul class="navigation">
+              <li>
+                <a class="navigation__link navigation__link--active" href="#" data-name="header-section"
+                  >HOME</a
+                >
+              </li>
+              <li>
+                <a
+                  class="navigation__link"
+                  href="#"
+                  data-name="section-services"
+                  >SERVICES</a
+                >
+              </li>
+              <li>
+                <a
+                  class="navigation__link"
+                  href="#"
+                  data-name="section-portfolio"
+                  >PORTFOLIO</a
+                >
+              </li>
+              <li><a class="navigation__link" href="#">ABOUT</a></li>
+              <li><a class="navigation__link" href="#">CONTACT</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="slider">
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="image/sliders/Slide-1.png" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="image/sliders/Slide-2.png" alt="" />
+            </div>
+          </div>
+
+          <div class="swiper-pagination"></div>
+
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </section>
+      <section class="services" id="section-services">
+        <div class="wrapper">
+          <div>
+            <h2>Our Services</h2>
+            <p class="services__text">
+              Fusce dapibus, tellus ac cursus commodo, tortor mauris
+              condimentum. Duis mollis, non commodo luctus, nisi erat porttitor
+              ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac
+              cursus commodo, tortor mauris condimentum nibh.
+            </p>
+          </div>
+          <ul class="services-content">
+            <li class="service-info">
+              <div>
+                <img
+                  src="image/services/services-item-1--nocircle.svg"
+                  alt=""
+                />
+              </div>
+              <div>
+                <h3>Custom Design</h3>
+                <p class="service-info__text">
+                  Curabitur vestibulum eget mauris quis laoreet. Phasellus in
+                  quam laoreet, viverra lacus ut, ultrices velit.
+                </p>
+              </div>
+            </li>
+            <li class="service-info">
+              <div>
+                <img
+                  src="image/services/services-item-2--nocircle.svg"
+                  alt=""
+                />
+              </div>
+              <div>
+                <h3>Inovative Ideas</h3>
+                <p class="service-info__text">
+                  Quisque luctus, quam eget molestie commodo, lacus purus cursus
+                  purus, nec rutrum tellus dolor id lorem.
+                </p>
+              </div>
+            </li>
+            <li class="service-info">
+              <div>
+                <img
+                  src="image/services/services-item-3--nocircle.svg"
+                  alt=""
+                />
+              </div>
+              <div>
+                <h3>Love Is The Answer</h3>
+                <p class="service-info__text">
+                  Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet
+                  turpis, et consequat felis. Quisque condimentum.
+                </p>
+              </div>
+            </li>
+            <li class="service-info">
+              <div>
+                <img
+                  src="image/services/services-item-4--nocircle.svg"
+                  alt=""
+                />
+              </div>
+              <div>
+                <h3>Responsive Layout</h3>
+                <p class="service-info__text">
+                  Sed porttitor placerat rhoncus. In at nunc tellus. Maecenas
+                  blandit nunc ligula. Praesent elit leo.
+                </p>
+              </div>
+            </li>
+            <li class="service-info">
+              <div>
+                <img
+                  src="image/services/services-item-5--nocircle.svg"
+                  alt=""
+                />
+              </div>
+              <div>
+                <h3>24 / 7 Support</h3>
+                <p class="service-info__text">
+                  Vivamus vel quam lacinia, tincidunt dui non, vehicula nisi.
+                  Nulla a sem erat. Pellentesque egestas venenatis lorem .
+                </p>
+              </div>
+            </li>
+            <li class="service-info">
+              <div>
+                <img
+                  src="image/services/services-item-6--nocircle.svg"
+                  alt=""
+                />
+              </div>
+              <div>
+                <h3>Feel Like A Star</h3>
+                <p class="service-info__text">
+                  Quisque hendrerit purus dapibus, ornare nibh vitae, viverra
+                  nibh. Fusce vitae aliquam tellus.
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="portfolio" id="section-portfolio">
+        <div class="wrapper">
+          <div>
+            <h2 class="portfolio__title">Portfolio</h2>
+            <p class="portfolio__text">
+              Duis mollis, est non commodo luctus, nisi erat porttitor ligula,
+              eget lacinia odio sem nec elit.
+            </p>
+          </div>
+          <div class="portfolio-content">
+            <div class="portfolio-tabs">
+              <ul class="portfolio-tablist">
+                <li
+                  class="portfolio-tablist__tab portfolio-tablist__tab--selected"
+                  data-name="all"
+                >
+                  All
+                </li>
+                <li class="portfolio-tablist__tab" data-name="web">
+                  Web Design
+                </li>
+                <li class="portfolio-tablist__tab" data-name="graphic">
+                  Graphic Design
+                </li>
+                <li class="portfolio-tablist__tab" data-name="artwork">
+                  Artwork
+                </li>
+              </ul>
+            </div>
+            <ul class="portfolio-gallery">
+              <li class="portfolio-gallery__image" data-name="artwork">
+                <img src="image/gallery/portfolio-1.png" alt="" />
+              </li>
+              <li class="portfolio-gallery__image" data-name="graphic">
+                <img src="image/gallery/portfolio-2.png" alt="" />
+              </li>
+              <li class="portfolio-gallery__image" data-name="web">
+                <img src="image/gallery/portfolio-3.png" alt="" />
+              </li>
+              <li class="portfolio-gallery__image" data-name="artwork">
+                <img src="image/gallery/portfolio-4.png" alt="" />
+              </li>
+              <li class="portfolio-gallery__image" data-name="graphic">
+                <img src="image/gallery/portfolio-5.png" alt="" />
+              </li>
+              <li class="portfolio-gallery__image" data-name="web">
+                <img src="image/gallery/portfolio-6.png" alt="" />
+              </li>
+              <li class="portfolio-gallery__image" data-name="artwork">
+                <img src="image/gallery/portfolio-7.png" alt="" />
+              </li>
+              <li class="portfolio-gallery__image" data-name="graphic">
+                <img src="image/gallery/portfolio-8.png" alt="" />
+              </li>
+              <li class="portfolio-gallery__image" data-name="web">
+                <img src="image/gallery/portfolio-9.png" alt="" />
+              </li>
+              <li class="portfolio-gallery__image" data-name="artwork">
+                <img src="image/gallery/portfolio-10.png" alt="" />
+              </li>
+              <li class="portfolio-gallery__image" data-name="graphic">
+                <img src="image/gallery/portfolio-11.png" alt="" />
+              </li>
+              <li class="portfolio-gallery__image" data-name="web">
+                <img src="image/gallery/portfolio-12.png" alt="" />
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="wrapper">
+        <p class="footer__text">© Copyright 2013</p>
+        <nav>
+          <ul class="social">
+            <li class="social__link">
+              <a href="#"
+                ><img src="image/footer/ico-facebook--nocircle.svg" alt=""
+              /></a>
+            </li>
+            <li class="social__link">
+              <a href="#"
+                ><img src="image/footer/ico-google-plus--nocircle.svg" alt=""
+              /></a>
+            </li>
+            <li class="social__link">
+              <a href="#"
+                ><img src="image/footer/ico-twitter--nocircle.svg" alt=""
+              /></a>
+            </li>
+            <li class="social__link">
+              <a href="#"
+                ><img src="image/footer/ico-linkedin--nocircle.svg" alt=""
+              /></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
 </html>

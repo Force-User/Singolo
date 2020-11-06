@@ -1,0 +1,17 @@
+.burger {
+  position: fixed;
+  top: 30px;
+  left: 20px;
+  display: none;
+  width: 20px;
+  height: 25px;
+  background: url("image/header/Burger-menu-icon.svg") center no-repeat;
+  background-size:contain;
+  transform: rotate(0deg);
+  transition: 0.3s;
+  cursor: pointer;
+  z-index: 4;
+  &--active {
+    transform :rotate(90deg);
+  }
+}

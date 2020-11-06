@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+
+@import "sass/abstarct/constants";
+@import "sass/abstarct/mixin";
+@import "sass/abstarct/placeholder";
+
+@import "sass/base/base";
+
+@import "sass/layouts/wrapper";
+@import "sass/layouts/header";
+@import "sass/layouts/services";
+@import "sass/layouts/portfolio";
+@import "sass/layouts/footer";
+
+@import "sass/component/burger";
+@import "sass/component/logo";
+@import "sass/component/navigation";
+@import "sass/component/menu";
+@import "sass/component/slide";
+@import "sass/component/social";
+@import "sass/component/scrollbar";
+
+@import "sass/base/media";

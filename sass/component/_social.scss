@@ -1,0 +1,18 @@
+.social {
+  display: flex;
+  &__link {
+    width: 32px;
+    height: 32px;
+    @include flex();
+    border: 1px solid $color-text;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+    &:hover {
+      box-shadow: 0 0 5px 1px $color-text;
+    }
+    &:nth-child(n+2) {
+      margin-left: 8px;
+    }
+  }
+}
