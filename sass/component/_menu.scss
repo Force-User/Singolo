@@ -24,6 +24,9 @@
   & .navigation {
     @include flex(flex-start);
     width: auto;
+    &  li {
+      margin-left: 0;
+    }
   }
   &  li {
     margin-bottom: 25px;

@@ -447,6 +447,10 @@ p {
   width: auto;
 }
 
+.menu .navigation li {
+  margin-left: 0;
+}
+
 .menu li {
   margin-bottom: 25px;
 }
